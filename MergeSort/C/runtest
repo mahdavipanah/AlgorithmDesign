@@ -1,0 +1,8 @@
+#!/bin/bash
+
+gcc mergesort_test.c mergesort.c -o mergesort_test && ./mergesort_test $*
+
+if [ -e mergesort_test ]
+  then
+    rm mergesort_test
+fi
