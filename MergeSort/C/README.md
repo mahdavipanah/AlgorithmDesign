@@ -1,4 +1,4 @@
-# Merge sort algorithm in C programming language
+# [Merge sort algorithm in C programming language](https://en.wikipedia.org/wiki/Merge_sort)
 
 ##  Files:
 * mergesort.c:       Containts merge_sort function code
