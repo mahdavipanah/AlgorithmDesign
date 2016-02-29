@@ -71,12 +71,7 @@ main (int argc, char *argv[]) {
         cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
 
         // Checks if two arrays are exactly equal
-        int failure = 0;
-        for (i = 0; i < n; ++i)
-                if (A[i] != B[i]) {
-                        failure = 1;
-                        break;
-                }
+        int failure = memcmp(A, B, n * sizeof(int));
 
         if (failure)
                 printf(KRED "Algorithm Test failed!\n" RESET);
