@@ -1,0 +1,8 @@
+#!/bin/bash
+
+gcc quicksort_test.c quicksort.c -o quicksort_test && ./quicksort_test $*
+
+if [ -e quicksort_test ]
+  then
+    rm quicksort_test
+fi
