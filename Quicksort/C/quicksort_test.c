@@ -54,7 +54,7 @@ main (int argc, char *argv[]) {
         // Fills the firt array with random numbers
         int i;
         for (i = 0; i < n; ++i)
-                A[i] = rand() % (n * 1000);
+                A[i] = rand();
 
         // Copies first array to seccond array
         int *B = malloc(sizeof(int) * n);
