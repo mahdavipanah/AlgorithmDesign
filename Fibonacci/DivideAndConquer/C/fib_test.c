@@ -19,7 +19,7 @@ cmpfunc (const void * a, const void * b)
 int
 main (int argc, char *argv[]) {
         // Size of int to be tested
-        unsigned int n = 100;
+        unsigned int n = 30;
 
         // Checks if test should be ran with custom array size
         if (argc > 1) {

@@ -11,8 +11,8 @@ You need to have gcc compiler and bash interpreter installed on your machine in 
 
 For running the test you have to execute ./runtest script from your command line:
 ```Bash
-$ ./runtest 100
+$ ./runtest 30
 ```
-The optional argument to ./runtest determines the nth fibonacci number to find (The default is: 100)
+The optional argument to ./runtest determines the nth fibonacci number to find (The default is: 30)
 
 The output shows the algorithm's execution time in seconds.
