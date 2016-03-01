@@ -1,0 +1,8 @@
+#!/bin/bash
+
+gcc fib_test.c fib.c -o fib_test && ./fib_test $*
+
+if [ -e fib_test ]
+  then
+    rm fib_test
+fi
