@@ -1,4 +1,4 @@
-# [Merge sort algorithm in C programming language](https://en.wikipedia.org/wiki/Merge_sort)
+# [Merge sort algorithm](https://en.wikipedia.org/wiki/Merge_sort) in C programming language
 
 ##  Files:
 * mergesort.c:       Containts merge_sort function code
@@ -9,7 +9,7 @@
 ## Runing test
 You need to have gcc compiler and bash interpreter installed on your machine in order to run the test.
 
-For runing the test you have to execute ./runtest script from your command line:
+For running the test you have to execute ./runtest script from your command line:
 ```Bash
 $ ./runtest 1000
 ```
