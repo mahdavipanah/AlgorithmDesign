@@ -1,0 +1,8 @@
+#!/bin/bash
+
+gcc arraymax_test.c arraymax.c -o arraymax_test && ./arraymax_test $*
+
+if [ -e arraymax_test ]
+  then
+    rm arraymax_test
+fi
