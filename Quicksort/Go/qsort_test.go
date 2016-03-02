@@ -39,14 +39,20 @@ func randSlices() (A, B []int) {
 	return
 }
 
-// Tests the qsort.ConcSort function by filling a slice with random numbers
-// and then sorting it with qsort.ConcSort and sort.Ints and check if they
+// Tests the qsort.ConcSort or qsort.Sort functions by filling a slice with random numbers
+// and then sorting it with package functions and sort.Ints and check if they
 // are equal
-func TestConcSort(t *testing.T) {
+//
+// conc bool : chooses if test should be run on qsort.ConcSort or qsort.Sort
+func test(t *testing.T, conc bool) {
 	// Gets two equal random element generated slices
 	A, B := randSlices()
 
-	ConcSort(A)      // Sorts first slice using megesort.Sort function
+	if conc {
+		ConcSort(A)
+	} else {
+		Sort(A)
+	}
 	sort.Ints(B) // Sorts second slice using sort.Ints go standard library function
 
 	// Checks if two slices are equal
@@ -56,13 +62,39 @@ func TestConcSort(t *testing.T) {
 
 }
 
-// Evaluates execution time for qsort.ConcSort function for sorting
-// a slice with given length
-func BenchmarkConcSort(b *testing.B) {
+// Tests the qsort.ConcSort
+func TestConcSort(t *testing.T) {
+	test(t, true)
+}
+
+// Tests the qsort.Sort
+func TestSort(t *testing.T) {
+	test(t, false)
+}
+
+// Evaluates execution time for qsort.ConcSort or qsort.Sort function for sorting
+// a slice with given length (In "SLICELEN" environment variable)
+//
+// conc bool : chooses if benchmark should be run on qsort.ConcSort or qsort.Sort
+func benchmark(b *testing.B, conc bool) {
 	for i := 0; i < b.N; i++ {
 		b.StopTimer()
 		A, _ := randSlices()
 		b.StartTimer()
-		ConcSort(A)
+		if conc {
+			ConcSort(A)
+		} else {
+			Sort(A)
+		}
 	}
+}
+
+// Runs the benchmark for qsort.ConcSort
+func BenchmarkConcSort(b *testing.B) {
+	benchmark(b, true)
+}
+
+// Runs the benchmark for qsort.Sort
+func BenchmarkSort(b *testing.B) {
+	benchmark(b, false)
 }

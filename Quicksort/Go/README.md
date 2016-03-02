@@ -1,8 +1,9 @@
 # [Quicksort algorithm](https://en.wikipedia.org/wiki/Quicksort) in Go programming language
 
 ##  Files:
-* concqsort.go:      Contains qsort.ConcSort function code   
+* concqsort.go:      Contains qsort.ConcSort related codes
 * qsort_test.go:     Contains tests and benchmarks for qsort package
+* qsort.go           contains qsort.Sort related codes
 * runtest:           Bash script running tests and benchmarks
 
 ## Runing test
